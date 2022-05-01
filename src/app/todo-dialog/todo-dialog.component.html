@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Edit</h1>
+
+<div mat-dialog-content>
+    <div>
+        <mat-form-field>
+            <mat-label>Todo Title</mat-label>
+            <input type="text" matInput placeholder="Todo Title" [(ngModel)]="data.todo.title"> 
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field>
+            <mat-label>Todo Description</mat-label>
+            <input type="text" matInput placeholder="Todo Description" [(ngModel)]="data.todo.body"> 
+        </mat-form-field>
+    </div>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Close</button>
+    <button mat-raised-button
+    [disabled]="data.todo.title === '' || data.todo.body === ''"
+    color="primary"
+    (click)="save()"
+    >Save</button>
+</div>

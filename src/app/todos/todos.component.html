@@ -1,0 +1,35 @@
+<mat-card>
+    <form [formGroup]="todoForm" (ngSubmit)="createTodo()">
+        <mat-form-field>
+            <mat-label>Todo Title</mat-label>
+            <input type="text" matInput placeholder="Todo Title" formControlName='title'/>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Todo Description</mat-label>
+            <input type="text" matInput placeholder="Todo Description" formControlName='body'/>
+        </mat-form-field>
+
+        <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="!todoForm.valid"
+        >Add</button>
+    </form>
+</mat-card>
+
+
+<mat-card>
+    <mat-list>
+        <mat-list-item *ngFor="let todo of todos">
+            <mat-icon mat-list-icon>today</mat-icon>
+
+            <div mat-line>{{todo.title}}</div>
+            <div mat-line>{{todo.body}}</div>
+            
+            <mat-icon (click)="editTodo(todo)">edit</mat-icon>
+            <mat-icon (click)="deleteTodo(todo)">delete</mat-icon>
+        </mat-list-item>
+    </mat-list>
+</mat-card>

@@ -1,0 +1,18 @@
+mat-card {
+    display: flex;
+    width: 50%;
+    margin: 70px auto;
+}
+
+mat-card mat-list {
+    width: 100%;
+    cursor: pointer;
+}
+
+form {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+}
